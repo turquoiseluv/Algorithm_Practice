@@ -1,4 +1,16 @@
-# 86.7/100 추후 풀이 정리
+'''
+1차 86.7/100 추후 풀이 정리
+였지만, 사실 "`(None)`" -> "(None)"
+이거 차이였네 ;;
+
+2차 100/100
+고칠 점들: cleanTune 쪽 "#" 처리하는 방법으로,
+getTune에서 result로 붙여넣기 전에 #이면 앞의 문자를 바꾸던가
+
+info = re.compile('[A-G]#?').findall(song)
+정규식 방식으로 #을 포함한 문자열 list로 추출해서 len(i)가 2일 때,
+i[0]을 다른 문자로 바꾼다 'C#' => 'c'  
+'''
 
 def cleanTune(melody):
     melody = list(melody)
@@ -49,5 +61,5 @@ def solution(m, musicinfos):
                 answer = info[2]
 
     if answer == "":
-        return "`(None)`"
+        return "(None)"
     return answer
